@@ -1,6 +1,41 @@
+import { useState, useEffect } from "react";
 import { motion } from "motion/react";
 
 export default function Navbar() {
+  const [activeSection, setActiveSection] = useState("home");
+
+  useEffect(() => {
+    const observerOptions = {
+      root: null,
+      rootMargin: "-20% 0px -70% 0px",
+      threshold: 0,
+    };
+
+    const observerCallback = (entries: IntersectionObserverEntry[]) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setActiveSection(entry.target.id);
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+    const sections = ["home", "blog", "contact"];
+    sections.forEach((id) => {
+      const element = document.getElementById(id);
+      if (element) observer.observe(element);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
+  const navLinks = [
+    { name: "Home", href: "#home", id: "home" },
+    { name: "Blog", href: "#blog", id: "blog" },
+    { name: "Contact", href: "#contact", id: "contact" },
+  ];
+
   return (
     <nav className="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-md">
       <div className="flex justify-between items-center max-w-7xl mx-auto px-8 md:px-16 h-20">
@@ -8,21 +43,19 @@ export default function Navbar() {
           Dawn Yve
         </a>
         <div className="hidden md:flex items-center gap-10 font-serif text-lg tracking-tight">
-          <a className="text-primary border-b-2 border-primary pb-1" href="#home">
-            Home
-          </a>
-          <a
-            className="text-primary/60 hover:text-primary transition-colors"
-            href="#blog"
-          >
-            Blog
-          </a>
-          <a
-            className="text-primary/60 hover:text-primary transition-colors"
-            href="#contact"
-          >
-            Contact
-          </a>
+          {navLinks.map((link) => (
+            <a
+              key={link.id}
+              className={`transition-all duration-300 pb-1 ${
+                activeSection === link.id
+                  ? "text-primary border-b-2 border-primary"
+                  : "text-primary/60 hover:text-primary"
+              }`}
+              href={link.href}
+            >
+              {link.name}
+            </a>
+          ))}
         </div>
         <div className="md:hidden">
           <button className="text-primary">

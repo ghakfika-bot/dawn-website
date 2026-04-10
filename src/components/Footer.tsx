@@ -5,7 +5,7 @@ export default function Footer() {
         <div className="flex flex-col items-center md:items-start gap-2">
           <span className="font-serif italic text-lg text-primary">Dawn Yve</span>
           <p className="font-sans text-sm tracking-wide text-on-surface-variant">
-            © 2024 Dawn Yve. Scholar & Educator.
+            © 2026 Dawn Yve. Scholar & Educator.
           </p>
         </div>
         <div className="flex gap-8">

@@ -3,21 +3,21 @@ import { ArrowUpRight } from "lucide-react";
 
 const researchItems = [
   {
-    date: "March 12, 2024",
+    date: "March 12, 2026",
     title: "Modern Pedagogy in the Digital Age",
     description:
       "An analysis of how hybrid learning models affect cognitive retention and social development in secondary education environments...",
     tags: ["Hybrid Learning", "Case Study"],
   },
   {
-    date: "January 28, 2024",
+    date: "January 28, 2026",
     title: "Inclusive Classroom Strategies",
     description:
       "Proposing a new framework for universal design for learning (UDL) that prioritizes neurodivergent student engagement...",
     tags: ["UDL", "Inclusivity"],
   },
   {
-    date: "December 04, 2023",
+    date: "December 04, 2025",
     title: "Sociology of the Virtual Desk",
     description:
       "A qualitative study exploring the identity formation of students within virtual reality classrooms and decentralized networks...",
@@ -41,7 +41,7 @@ export default function Research() {
           </div>
           <div className="bg-primary/5 px-6 py-2 rounded-full">
             <span className="text-primary font-sans font-semibold">
-              2024 Archive
+              2026 Archive
             </span>
           </div>
         </div>

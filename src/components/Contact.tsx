@@ -92,7 +92,7 @@ export default function Contact() {
               ></textarea>
             </div>
             <button
-              className="w-full bg-gradient-to-r from-primary to-primary-dim text-on-primary py-4 rounded-full font-sans font-bold tracking-wide hover:opacity-90 transition-all active:scale-95"
+              className="w-full bg-gradient-to-r from-primary to-primary-dim text-white py-4 rounded-full font-sans font-bold tracking-wide hover:opacity-90 transition-all active:scale-95"
               type="submit"
             >
               Send Message

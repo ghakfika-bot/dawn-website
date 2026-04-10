@@ -27,9 +27,12 @@ export default function Hero() {
             digital empathy reshapes the classroom.
           </p>
           <div className="flex flex-wrap gap-6 items-center">
-            <button className="bg-gradient-to-r from-primary to-primary-dim text-on-primary px-8 py-4 rounded-full font-sans font-medium hover:opacity-90 transition-opacity active:scale-95 duration-150">
-              Download CV
-            </button>
+            <a
+              href="mailto:hello@dawnyve.edu"
+              className="bg-gradient-to-r from-primary to-primary-dim text-white px-8 py-4 rounded-full font-sans font-medium hover:opacity-90 transition-opacity active:scale-95 duration-150"
+            >
+              Contact me
+            </a>
             <a
               className="text-primary font-sans font-medium flex items-center gap-2 group"
               href="#blog"
